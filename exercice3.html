@@ -15,22 +15,21 @@
   </form>
  <script>
   $(document).ready(function(){
-    var regexNom = /[a-záàâäãåéèêëíìîïA-Z]+[\-]?[a-záàâäãåéèêëíìîïA-Z]$/;
+    var regexNom = /^[a-záàâäãåéèêëíìîïA-Z]+[\-]?[a-záàâäãåéèêëíìîïA-Z]$/;
     var regexMail = /^[\w.-_\-]+[@]{1}[a-z]+[\.]{1}[a-z]{2,6}$/;
-    var regexTel = /[0]{1}[0-9]{1}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}$/;
+    var regexTel = /^[0]{1}[0-9]{1}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}$/;
     $('#validate').click(function(){
-      if(regexNom.test($('#name').val()) == false){
+      if(regexNom.test($('#name').val()) === false){
         alert('Oups tu ne sais pas écrire ton nom !');
       };
-      if (regexNom.test($('#firstname').val()) == false){
+      if (regexNom.test($('#firstname').val()) === false){
         alert('Oups tu ne sais pas écrire ton prénom !');
       };
-      if (regexMail.test($('#mail').val()) == false){
+      if (regexMail.test($('#mail').val()) === false){
         alert('exemple kikou@lol.com');
-      };//l'alert conditionne la reponse de l'intervenent
-      if (regexTel.test($('#phone').val()) == false){
+      };
+      if (regexTel.test($('#phone').val()) === false){
         alert('exemple de tel 01 02 03 04 05');
-        //sinon alerte de remeriment
       } else {
         alert('Félicitafions')
       };
